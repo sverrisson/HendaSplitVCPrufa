@@ -19,8 +19,4 @@
     self.view.backgroundColor = [UIColor systemTealColor];
 }
 
-- (void)collapseSecondaryViewController:(UIViewController *)secondaryViewController forSplitViewController:(UISplitViewController *)splitViewController {
-    NSLog(@"collapseSecondaryViewController");
-}
-
 @end

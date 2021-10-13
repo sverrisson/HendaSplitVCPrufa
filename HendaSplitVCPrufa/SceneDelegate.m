@@ -27,6 +27,7 @@
     
     // Create VC
     UISplitViewController *mainSplitVC = [[MainSplitViewController alloc] initWithStyle: UISplitViewControllerStyleTripleColumn];
+    mainSplitVC.delegate = self;
     UIViewController *primary = [[PrimaryViewController alloc] init];
     UIViewController *secondary = [[SecondaryViewController alloc] init];
     UIViewController *supplementary = [[SupplementaryViewController alloc] init];
@@ -72,6 +73,20 @@
     // Called as the scene transitions from the foreground to the background.
     // Use this method to save data, release shared resources, and store enough scene-specific state information
     // to restore the scene back to its current state.
+}
+
+//MARK: - SplitViewControllerDelegate
+
+- (void)collapseSecondaryViewController:(UIViewController *)secondaryViewController forSplitViewController:(UISplitViewController *)splitViewController {
+    NSLog(@"collapseSecondaryViewController");
+}
+
+- (void)splitViewControllerDidExpand:(UISplitViewController *)svc {
+    NSLog(@"splitViewControllerDidExpand");
+}
+
+- (void)splitViewControllerDidCollapse:(UISplitViewController *)svc {
+    NSLog(@"splitViewControllerDidCollapse");
 }
 
 
