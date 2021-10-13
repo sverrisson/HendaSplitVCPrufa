@@ -6,7 +6,9 @@
 //
 
 #import "SceneDelegate.h"
-#import "ViewController.h"
+#import "MainSplitViewController.h"
+#import "PepDetailViewController.h"
+#import "PeplistViewController.h"
 
 @interface SceneDelegate ()
 
@@ -22,8 +24,18 @@
     UIWindowScene *windowScene = (UIWindowScene *)scene;
     UIWindow *window = [[UIWindow alloc] initWithWindowScene:windowScene];
     
+    // Create VC
+    UISplitViewController *mainSplitVC = [[MainSplitViewController alloc] initWithStyle: UISplitViewControllerStyleTripleColumn];
+    UIViewController *pepDetail = [PepDetailViewController new];
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:pepDetail];
+    UIViewController *pepList = [[PeplistViewController alloc] init];
+    
+    [mainSplitVC setViewController:pepList forColumn:UISplitViewControllerColumnPrimary];
+    [mainSplitVC setViewController:navigationController forColumn:UISplitViewControllerColumnSecondary];
+    [mainSplitVC setViewController:pepList forColumn:UISplitViewControllerColumnSupplementary];
+    
     // Activate windows
-    window.rootViewController = [[ViewController alloc] init];
+    window.rootViewController = mainSplitVC;
     self.window = window;
     [self.window makeKeyAndVisible];
 }

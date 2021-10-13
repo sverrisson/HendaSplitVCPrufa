@@ -15,6 +15,7 @@
 		2024DEAF271664D500D98909 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2024DEAE271664D500D98909 /* main.m */; };
 		2024DEB727166B3300D98909 /* PeplistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2024DEB627166B3300D98909 /* PeplistViewController.m */; };
 		2024DEBA27166D6700D98909 /* PepDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2024DEB927166D6700D98909 /* PepDetailViewController.m */; };
+		92AF4C35271753BB00172673 /* MainSplitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92AF4C34271753BB00172673 /* MainSplitViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,8 @@
 		2024DEB627166B3300D98909 /* PeplistViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PeplistViewController.m; sourceTree = "<group>"; };
 		2024DEB827166D6700D98909 /* PepDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PepDetailViewController.h; sourceTree = "<group>"; };
 		2024DEB927166D6700D98909 /* PepDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PepDetailViewController.m; sourceTree = "<group>"; };
+		92AF4C33271753BB00172673 /* MainSplitViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainSplitViewController.h; sourceTree = "<group>"; };
+		92AF4C34271753BB00172673 /* MainSplitViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainSplitViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +72,8 @@
 				2024DE9D271664D400D98909 /* AppDelegate.m */,
 				2024DE9F271664D400D98909 /* SceneDelegate.h */,
 				2024DEA0271664D400D98909 /* SceneDelegate.m */,
+				92AF4C33271753BB00172673 /* MainSplitViewController.h */,
+				92AF4C34271753BB00172673 /* MainSplitViewController.m */,
 				2024DEA2271664D400D98909 /* ViewController.h */,
 				2024DEA3271664D400D98909 /* ViewController.m */,
 				2024DEB827166D6700D98909 /* PepDetailViewController.h */,
@@ -154,6 +159,7 @@
 			files = (
 				2024DEA4271664D400D98909 /* ViewController.m in Sources */,
 				2024DE9E271664D400D98909 /* AppDelegate.m in Sources */,
+				92AF4C35271753BB00172673 /* MainSplitViewController.m in Sources */,
 				2024DEAF271664D500D98909 /* main.m in Sources */,
 				2024DEBA27166D6700D98909 /* PepDetailViewController.m in Sources */,
 				2024DEA1271664D400D98909 /* SceneDelegate.m in Sources */,
