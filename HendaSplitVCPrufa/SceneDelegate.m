@@ -12,7 +12,7 @@
 #import "SupplementaryViewController.h"
 
 @interface SceneDelegate ()
-
+- (NSString *)columnName:(UISplitViewControllerColumn)column;
 @end
 
 @implementation SceneDelegate
@@ -80,41 +80,11 @@
 //MARK: - SplitViewControllerDelegate
 
 - (void)splitViewController:(UISplitViewController *)svc willHideColumn:(UISplitViewControllerColumn)column {
-    switch (column) {
-        case UISplitViewControllerColumnPrimary:
-            NSLog(@"willHideColumn: %@", @"Primary");
-            break;
-            
-        case UISplitViewControllerColumnSecondary:
-            NSLog(@"willHideColumn: %@", @"Secondary");
-            break;
-            
-        case UISplitViewControllerColumnCompact:
-            NSLog(@"willHideColumn: %@", @"Compact");
-            break;
-            
-        default:
-            break;
-    }
+    NSLog(@"willHideColumn: %@", [self columnName:column]);
 }
 
 - (void)splitViewController:(UISplitViewController *)svc willShowColumn:(UISplitViewControllerColumn)column {
-    switch (column) {
-        case UISplitViewControllerColumnPrimary:
-            NSLog(@"willShowColumn: %@", @"Primary");
-            break;
-            
-        case UISplitViewControllerColumnSecondary:
-            NSLog(@"willShowColumn: %@", @"Secondary");
-            break;
-            
-        case UISplitViewControllerColumnCompact:
-            NSLog(@"willShowColumn: %@", @"Compact");
-            break;
-            
-        default:
-            break;
-    }
+    NSLog(@"willShowColumn: %@", [self columnName:column]);
 }
 
 - (void)collapseSecondaryViewController:(UIViewController *)secondaryViewController forSplitViewController:(UISplitViewController *)splitViewController {
@@ -133,5 +103,40 @@
     NSLog(@"Show Button");
 }
 
+
+- (UISplitViewControllerColumn)splitViewController:(UISplitViewController *)svc topColumnForCollapsingToProposedTopColumn:(UISplitViewControllerColumn)proposedTopColumn {
+    NSLog(@"topColumnForCollapsingToProposedTopColumn: %@", [self columnName:proposedTopColumn]);
+    return proposedTopColumn;
+}
+
+- (UISplitViewControllerDisplayMode)splitViewController:(UISplitViewController *)svc displayModeForExpandingToProposedDisplayMode:(UISplitViewControllerDisplayMode)proposedDisplayMode {
+    NSLog(@"displayModeForExpandingToProposedDisplayMode: %li", proposedDisplayMode);
+    return proposedDisplayMode;
+}
+
+- (NSString *)columnName:(UISplitViewControllerColumn)column {
+    switch (column) {
+        case UISplitViewControllerColumnPrimary:
+            return @"Primary";
+            break;
+            
+        case UISplitViewControllerColumnSecondary:
+            return @"Secondary";
+            break;
+            
+        case UISplitViewControllerColumnCompact:
+            return @"Compact";
+            break;
+            
+        case UISplitViewControllerColumnSupplementary:
+            return @"Supplementary";
+            break;
+
+        default:
+            NSAssert(NO, @"Unimplemented Column");
+            return @"Unimplemented Column";
+            break;
+    }
+}
 
 @end
