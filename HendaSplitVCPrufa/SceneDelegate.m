@@ -26,15 +26,17 @@
     UIWindow *window = [[UIWindow alloc] initWithWindowScene:windowScene];
     
     // Create VC
-    UISplitViewController *mainSplitVC = [[MainSplitViewController alloc] initWithStyle: UISplitViewControllerStyleTripleColumn];
+    UISplitViewController *mainSplitVC = [[MainSplitViewController alloc] initWithStyle: UISplitViewControllerStyleDoubleColumn];
     mainSplitVC.delegate = self;
+    [mainSplitVC setPreferredDisplayMode:UISplitViewControllerDisplayModeOneBesideSecondary];
+    [mainSplitVC setPreferredSplitBehavior:UISplitViewControllerSplitBehaviorTile];
+    [mainSplitVC setPreferredPrimaryColumnWidth: 280];
+    
     UIViewController *primary = [[PrimaryViewController alloc] init];
     UIViewController *secondary = [[SecondaryViewController alloc] init];
-    UIViewController *supplementary = [[SupplementaryViewController alloc] init];
     
     [mainSplitVC setViewController:primary forColumn:UISplitViewControllerColumnPrimary];
     [mainSplitVC setViewController:secondary forColumn:UISplitViewControllerColumnSecondary];
-    [mainSplitVC setViewController:supplementary forColumn:UISplitViewControllerColumnSupplementary];
     
     // Activate windows
     window.rootViewController = mainSplitVC;
@@ -77,16 +79,58 @@
 
 //MARK: - SplitViewControllerDelegate
 
+- (void)splitViewController:(UISplitViewController *)svc willHideColumn:(UISplitViewControllerColumn)column {
+    switch (column) {
+        case UISplitViewControllerColumnPrimary:
+            NSLog(@"willHideColumn: %@", @"Primary");
+            break;
+            
+        case UISplitViewControllerColumnSecondary:
+            NSLog(@"willHideColumn: %@", @"Secondary");
+            break;
+            
+        case UISplitViewControllerColumnCompact:
+            NSLog(@"willHideColumn: %@", @"Compact");
+            break;
+            
+        default:
+            break;
+    }
+}
+
+- (void)splitViewController:(UISplitViewController *)svc willShowColumn:(UISplitViewControllerColumn)column {
+    switch (column) {
+        case UISplitViewControllerColumnPrimary:
+            NSLog(@"willShowColumn: %@", @"Primary");
+            break;
+            
+        case UISplitViewControllerColumnSecondary:
+            NSLog(@"willShowColumn: %@", @"Secondary");
+            break;
+            
+        case UISplitViewControllerColumnCompact:
+            NSLog(@"willShowColumn: %@", @"Compact");
+            break;
+            
+        default:
+            break;
+    }
+}
+
 - (void)collapseSecondaryViewController:(UIViewController *)secondaryViewController forSplitViewController:(UISplitViewController *)splitViewController {
     NSLog(@"collapseSecondaryViewController");
 }
 
 - (void)splitViewControllerDidExpand:(UISplitViewController *)svc {
     NSLog(@"splitViewControllerDidExpand");
+    
+    NSLog(@"Hide Button");
 }
 
 - (void)splitViewControllerDidCollapse:(UISplitViewController *)svc {
     NSLog(@"splitViewControllerDidCollapse");
+    
+    NSLog(@"Show Button");
 }
 
 
