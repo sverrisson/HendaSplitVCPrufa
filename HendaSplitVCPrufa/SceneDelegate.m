@@ -93,14 +93,15 @@
 
 - (void)splitViewControllerDidExpand:(UISplitViewController *)svc {
     NSLog(@"splitViewControllerDidExpand");
-    
-    NSLog(@"Hide Button");
+    NSDictionary *message = @{@"message": @"hide"};
+    [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationHideShowButton object:self userInfo:message];
 }
 
 - (void)splitViewControllerDidCollapse:(UISplitViewController *)svc {
     NSLog(@"splitViewControllerDidCollapse");
-    
-    NSLog(@"Show Button");
+    NSDictionary *message = @{@"message": @"show"};
+    [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationHideShowButton object:self userInfo:message];
+
 }
 
 

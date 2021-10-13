@@ -9,6 +9,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+#define kNotificationHideShowButton @"kNotificationHideShowButton"
+
 @interface PrimaryViewController : UIViewController
 
 @end
