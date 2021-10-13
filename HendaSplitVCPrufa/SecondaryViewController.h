@@ -9,7 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface PepDetailViewController : UIViewController
+@interface SecondaryViewController : UIViewController
 
 @end
 

@@ -1,23 +1,24 @@
 //
-//  PepDetailViewController.m
+//  PeplistViewController.m
 //  HendaSplitVCPrufa
 //
 //  Created by Hannes Sverrisson on 13.10.2021.
 //
 
-#import "PepDetailViewController.h"
+#import "PrimaryViewController.h"
 
-@interface PepDetailViewController ()
+@interface PrimaryViewController ()
 
 @end
 
-@implementation PepDetailViewController
+@implementation PrimaryViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self.view setBackgroundColor: [UIColor systemGreenColor]];
-    self.title = @"PepDetail";
+    
+    [self.view setBackgroundColor: [UIColor systemYellowColor]];
+    self.title = @"PrimaryViewController";
 }
 
 /*

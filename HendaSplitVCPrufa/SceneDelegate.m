@@ -7,8 +7,9 @@
 
 #import "SceneDelegate.h"
 #import "MainSplitViewController.h"
-#import "PepDetailViewController.h"
-#import "PeplistViewController.h"
+#import "SecondaryViewController.h"
+#import "PrimaryViewController.h"
+#import "SupplementaryViewController.h"
 
 @interface SceneDelegate ()
 
@@ -26,13 +27,13 @@
     
     // Create VC
     UISplitViewController *mainSplitVC = [[MainSplitViewController alloc] initWithStyle: UISplitViewControllerStyleTripleColumn];
-    UIViewController *pepDetail = [PepDetailViewController new];
-    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:pepDetail];
-    UIViewController *pepList = [[PeplistViewController alloc] init];
+    UIViewController *primary = [[PrimaryViewController alloc] init];
+    UIViewController *secondary = [[SecondaryViewController alloc] init];
+    UIViewController *supplementary = [[SupplementaryViewController alloc] init];
     
-    [mainSplitVC setViewController:pepList forColumn:UISplitViewControllerColumnPrimary];
-    [mainSplitVC setViewController:navigationController forColumn:UISplitViewControllerColumnSecondary];
-    [mainSplitVC setViewController:pepList forColumn:UISplitViewControllerColumnSupplementary];
+    [mainSplitVC setViewController:primary forColumn:UISplitViewControllerColumnPrimary];
+    [mainSplitVC setViewController:secondary forColumn:UISplitViewControllerColumnSecondary];
+    [mainSplitVC setViewController:supplementary forColumn:UISplitViewControllerColumnSupplementary];
     
     // Activate windows
     window.rootViewController = mainSplitVC;

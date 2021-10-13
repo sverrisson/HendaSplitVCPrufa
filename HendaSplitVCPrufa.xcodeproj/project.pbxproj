@@ -9,12 +9,12 @@
 /* Begin PBXBuildFile section */
 		2024DE9E271664D400D98909 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2024DE9D271664D400D98909 /* AppDelegate.m */; };
 		2024DEA1271664D400D98909 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2024DEA0271664D400D98909 /* SceneDelegate.m */; };
-		2024DEA4271664D400D98909 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2024DEA3271664D400D98909 /* ViewController.m */; };
+		2024DEA4271664D400D98909 /* SupplementaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2024DEA3271664D400D98909 /* SupplementaryViewController.m */; };
 		2024DEA9271664D500D98909 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2024DEA8271664D500D98909 /* Assets.xcassets */; };
 		2024DEAC271664D500D98909 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2024DEAA271664D500D98909 /* LaunchScreen.storyboard */; };
 		2024DEAF271664D500D98909 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2024DEAE271664D500D98909 /* main.m */; };
-		2024DEB727166B3300D98909 /* PeplistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2024DEB627166B3300D98909 /* PeplistViewController.m */; };
-		2024DEBA27166D6700D98909 /* PepDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2024DEB927166D6700D98909 /* PepDetailViewController.m */; };
+		2024DEB727166B3300D98909 /* PrimaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2024DEB627166B3300D98909 /* PrimaryViewController.m */; };
+		2024DEBA27166D6700D98909 /* SecondaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2024DEB927166D6700D98909 /* SecondaryViewController.m */; };
 		92AF4C35271753BB00172673 /* MainSplitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92AF4C34271753BB00172673 /* MainSplitViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -24,16 +24,16 @@
 		2024DE9D271664D400D98909 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		2024DE9F271664D400D98909 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
 		2024DEA0271664D400D98909 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
-		2024DEA2271664D400D98909 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		2024DEA3271664D400D98909 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		2024DEA2271664D400D98909 /* SupplementaryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SupplementaryViewController.h; sourceTree = "<group>"; };
+		2024DEA3271664D400D98909 /* SupplementaryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SupplementaryViewController.m; sourceTree = "<group>"; };
 		2024DEA8271664D500D98909 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2024DEAB271664D500D98909 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2024DEAD271664D500D98909 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2024DEAE271664D500D98909 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		2024DEB527166B3300D98909 /* PeplistViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PeplistViewController.h; sourceTree = "<group>"; };
-		2024DEB627166B3300D98909 /* PeplistViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PeplistViewController.m; sourceTree = "<group>"; };
-		2024DEB827166D6700D98909 /* PepDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PepDetailViewController.h; sourceTree = "<group>"; };
-		2024DEB927166D6700D98909 /* PepDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PepDetailViewController.m; sourceTree = "<group>"; };
+		2024DEB527166B3300D98909 /* PrimaryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrimaryViewController.h; sourceTree = "<group>"; };
+		2024DEB627166B3300D98909 /* PrimaryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PrimaryViewController.m; sourceTree = "<group>"; };
+		2024DEB827166D6700D98909 /* SecondaryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondaryViewController.h; sourceTree = "<group>"; };
+		2024DEB927166D6700D98909 /* SecondaryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondaryViewController.m; sourceTree = "<group>"; };
 		92AF4C33271753BB00172673 /* MainSplitViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainSplitViewController.h; sourceTree = "<group>"; };
 		92AF4C34271753BB00172673 /* MainSplitViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainSplitViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -74,12 +74,12 @@
 				2024DEA0271664D400D98909 /* SceneDelegate.m */,
 				92AF4C33271753BB00172673 /* MainSplitViewController.h */,
 				92AF4C34271753BB00172673 /* MainSplitViewController.m */,
-				2024DEA2271664D400D98909 /* ViewController.h */,
-				2024DEA3271664D400D98909 /* ViewController.m */,
-				2024DEB827166D6700D98909 /* PepDetailViewController.h */,
-				2024DEB927166D6700D98909 /* PepDetailViewController.m */,
-				2024DEB527166B3300D98909 /* PeplistViewController.h */,
-				2024DEB627166B3300D98909 /* PeplistViewController.m */,
+				2024DEB827166D6700D98909 /* SecondaryViewController.h */,
+				2024DEB927166D6700D98909 /* SecondaryViewController.m */,
+				2024DEB527166B3300D98909 /* PrimaryViewController.h */,
+				2024DEB627166B3300D98909 /* PrimaryViewController.m */,
+				2024DEA2271664D400D98909 /* SupplementaryViewController.h */,
+				2024DEA3271664D400D98909 /* SupplementaryViewController.m */,
 				2024DEA8271664D500D98909 /* Assets.xcassets */,
 				2024DEAA271664D500D98909 /* LaunchScreen.storyboard */,
 				2024DEAD271664D500D98909 /* Info.plist */,
@@ -157,13 +157,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2024DEA4271664D400D98909 /* ViewController.m in Sources */,
+				2024DEA4271664D400D98909 /* SupplementaryViewController.m in Sources */,
 				2024DE9E271664D400D98909 /* AppDelegate.m in Sources */,
 				92AF4C35271753BB00172673 /* MainSplitViewController.m in Sources */,
 				2024DEAF271664D500D98909 /* main.m in Sources */,
-				2024DEBA27166D6700D98909 /* PepDetailViewController.m in Sources */,
+				2024DEBA27166D6700D98909 /* SecondaryViewController.m in Sources */,
 				2024DEA1271664D400D98909 /* SceneDelegate.m in Sources */,
-				2024DEB727166B3300D98909 /* PeplistViewController.m in Sources */,
+				2024DEB727166B3300D98909 /* PrimaryViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
