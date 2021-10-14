@@ -102,7 +102,6 @@
     NSLog(@"splitViewControllerDidCollapse");
     NSDictionary *message = @{@"message": @"show"};
     [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationHideShowButton object:self userInfo:message];
-
 }
 
 
