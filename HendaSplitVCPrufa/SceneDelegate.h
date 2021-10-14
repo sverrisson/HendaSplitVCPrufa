@@ -7,10 +7,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SceneDelegate : UIResponder <UIWindowSceneDelegate, UISplitViewControllerDelegate>
+@interface SceneDelegate : UIResponder <UIWindowSceneDelegate>
 
 @property (strong, nonatomic) UIWindow * window;
-@property (assign) BOOL isShowingSecondary;
 
 @end
 

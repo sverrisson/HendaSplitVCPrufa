@@ -11,7 +11,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 #define kNotificationHideShowButton @"kNotificationHideShowButton"
 
-@interface PrimaryViewController : UIViewController
+@interface PrimaryViewController : UIViewController<UISplitViewControllerDelegate>
 @property (weak) UIViewController *secondary;
 @end
 
