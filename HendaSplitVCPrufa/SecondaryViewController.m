@@ -16,7 +16,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self.view setBackgroundColor: [UIColor systemGreenColor]];
+    [self.view setBackgroundColor: [UIColor colorWithRed:0 green:0.3 blue:0.5 alpha:0.8]];
     self.title = @"SecondaryViewController";
 }
 

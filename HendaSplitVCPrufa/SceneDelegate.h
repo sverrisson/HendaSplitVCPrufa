@@ -10,6 +10,7 @@
 @interface SceneDelegate : UIResponder <UIWindowSceneDelegate, UISplitViewControllerDelegate>
 
 @property (strong, nonatomic) UIWindow * window;
+@property (assign) BOOL isShowingSecondary;
 
 @end
 

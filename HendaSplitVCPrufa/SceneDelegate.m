@@ -24,6 +24,7 @@
     // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
     UIWindowScene *windowScene = (UIWindowScene *)scene;
     UIWindow *window = [[UIWindow alloc] initWithWindowScene:windowScene];
+    _isShowingSecondary = false;
     
     // Create VC
     UISplitViewController *mainSplitVC = [[MainSplitViewController alloc] initWithStyle: UISplitViewControllerStyleDoubleColumn];
@@ -82,10 +83,20 @@
 
 - (void)splitViewController:(UISplitViewController *)svc willHideColumn:(UISplitViewControllerColumn)column {
     NSLog(@"willHideColumn: %@", [self columnName:column]);
+    if (column == UISplitViewControllerColumnSecondary) {
+        _isShowingSecondary = false;
+//        NSDictionary *message = @{@"message": @"hide"};
+//        [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationHideShowButton object:self userInfo:message];
+    }
 }
 
 - (void)splitViewController:(UISplitViewController *)svc willShowColumn:(UISplitViewControllerColumn)column {
     NSLog(@"willShowColumn: %@", [self columnName:column]);
+    if (column == UISplitViewControllerColumnSecondary) {
+        _isShowingSecondary = true;
+//        NSDictionary *message = @{@"message": @"hide"};
+//        [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationHideShowButton object:self userInfo:message];
+    }
 }
 
 - (void)collapseSecondaryViewController:(UIViewController *)secondaryViewController forSplitViewController:(UISplitViewController *)splitViewController {
