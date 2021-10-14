@@ -32,8 +32,9 @@
     [mainSplitVC setPreferredSplitBehavior:UISplitViewControllerSplitBehaviorTile];
     [mainSplitVC setPreferredPrimaryColumnWidth: 280];
     
-    UIViewController *primary = [[PrimaryViewController alloc] init];
-    UIViewController *secondary = [[SecondaryViewController alloc] init];
+    PrimaryViewController *primary = [[PrimaryViewController alloc] init];
+    SecondaryViewController *secondary = [[SecondaryViewController alloc] init];
+    [primary setSecondary:secondary];
     
     [mainSplitVC setViewController:primary forColumn:UISplitViewControllerColumnPrimary];
     [mainSplitVC setViewController:secondary forColumn:UISplitViewControllerColumnSecondary];
