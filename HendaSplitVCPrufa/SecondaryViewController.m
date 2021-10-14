@@ -21,9 +21,9 @@
     self.title = @"SecondaryViewController";
 }
 
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-    NSLog(@"DidAppear");
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    NSLog(@"WillAppear");
     NSDictionary *message = @{@"message": @"hide"};
     [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationHideShowButton object:self userInfo:message];
 }
