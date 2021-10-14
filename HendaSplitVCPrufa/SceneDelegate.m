@@ -12,7 +12,7 @@
 #import "SupplementaryViewController.h"
 
 @interface SceneDelegate ()
-- (NSString *)columnName:(UISplitViewControllerColumn)column;
+
 @end
 
 @implementation SceneDelegate
@@ -24,17 +24,16 @@
     // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
     UIWindowScene *windowScene = (UIWindowScene *)scene;
     UIWindow *window = [[UIWindow alloc] initWithWindowScene:windowScene];
-    _isShowingSecondary = false;
     
     // Create VC
     UISplitViewController *mainSplitVC = [[MainSplitViewController alloc] initWithStyle: UISplitViewControllerStyleDoubleColumn];
-    mainSplitVC.delegate = self;
     [mainSplitVC setPreferredDisplayMode:UISplitViewControllerDisplayModeOneBesideSecondary];
     [mainSplitVC setPreferredSplitBehavior:UISplitViewControllerSplitBehaviorTile];
     [mainSplitVC setPreferredPrimaryColumnWidth: 280];
     
     PrimaryViewController *primary = [[PrimaryViewController alloc] init];
     SecondaryViewController *secondary = [[SecondaryViewController alloc] init];
+    [mainSplitVC setDelegate:primary];
     [primary setSecondary:secondary];
     
     [mainSplitVC setViewController:primary forColumn:UISplitViewControllerColumnPrimary];
@@ -77,78 +76,6 @@
     // Called as the scene transitions from the foreground to the background.
     // Use this method to save data, release shared resources, and store enough scene-specific state information
     // to restore the scene back to its current state.
-}
-
-//MARK: - SplitViewControllerDelegate
-
-- (void)splitViewController:(UISplitViewController *)svc willHideColumn:(UISplitViewControllerColumn)column {
-    NSLog(@"willHideColumn: %@", [self columnName:column]);
-    if (column == UISplitViewControllerColumnSecondary) {
-        _isShowingSecondary = false;
-//        NSDictionary *message = @{@"message": @"hide"};
-//        [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationHideShowButton object:self userInfo:message];
-    }
-}
-
-- (void)splitViewController:(UISplitViewController *)svc willShowColumn:(UISplitViewControllerColumn)column {
-    NSLog(@"willShowColumn: %@", [self columnName:column]);
-    if (column == UISplitViewControllerColumnSecondary) {
-        _isShowingSecondary = true;
-//        NSDictionary *message = @{@"message": @"hide"};
-//        [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationHideShowButton object:self userInfo:message];
-    }
-}
-
-- (void)collapseSecondaryViewController:(UIViewController *)secondaryViewController forSplitViewController:(UISplitViewController *)splitViewController {
-    NSLog(@"collapseSecondaryViewController");
-}
-
-- (void)splitViewControllerDidExpand:(UISplitViewController *)svc {
-    NSLog(@"splitViewControllerDidExpand");
-    NSDictionary *message = @{@"message": @"hide"};
-    [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationHideShowButton object:self userInfo:message];
-}
-
-- (void)splitViewControllerDidCollapse:(UISplitViewController *)svc {
-    NSLog(@"splitViewControllerDidCollapse");
-    NSDictionary *message = @{@"message": @"show"};
-    [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationHideShowButton object:self userInfo:message];
-}
-
-
-- (UISplitViewControllerColumn)splitViewController:(UISplitViewController *)svc topColumnForCollapsingToProposedTopColumn:(UISplitViewControllerColumn)proposedTopColumn {
-    NSLog(@"topColumnForCollapsingToProposedTopColumn: %@", [self columnName:proposedTopColumn]);
-    return proposedTopColumn;
-}
-
-- (UISplitViewControllerDisplayMode)splitViewController:(UISplitViewController *)svc displayModeForExpandingToProposedDisplayMode:(UISplitViewControllerDisplayMode)proposedDisplayMode {
-    NSLog(@"displayModeForExpandingToProposedDisplayMode: %li", proposedDisplayMode);
-    return proposedDisplayMode;
-}
-
-- (NSString *)columnName:(UISplitViewControllerColumn)column {
-    switch (column) {
-        case UISplitViewControllerColumnPrimary:
-            return @"Primary";
-            break;
-            
-        case UISplitViewControllerColumnSecondary:
-            return @"Secondary";
-            break;
-            
-        case UISplitViewControllerColumnCompact:
-            return @"Compact";
-            break;
-            
-        case UISplitViewControllerColumnSupplementary:
-            return @"Supplementary";
-            break;
-
-        default:
-            NSAssert(NO, @"Unimplemented Column");
-            return @"Unimplemented Column";
-            break;
-    }
 }
 
 @end
