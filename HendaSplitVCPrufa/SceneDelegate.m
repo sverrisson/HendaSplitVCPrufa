@@ -26,21 +26,20 @@
     UIWindow *window = [[UIWindow alloc] initWithWindowScene:windowScene];
     
     // Create VC
-    UISplitViewController *mainSplitVC = [[MainSplitViewController alloc] initWithStyle: UISplitViewControllerStyleDoubleColumn];
-    [mainSplitVC setPreferredDisplayMode:UISplitViewControllerDisplayModeOneBesideSecondary];
-    [mainSplitVC setPreferredSplitBehavior:UISplitViewControllerSplitBehaviorTile];
-    [mainSplitVC setPreferredPrimaryColumnWidth: 280];
+    UISplitViewController *splitVC = [[UISplitViewController alloc] initWithStyle: UISplitViewControllerStyleDoubleColumn];
+    [splitVC setPreferredSplitBehavior:UISplitViewControllerSplitBehaviorTile];
+    [splitVC setPreferredPrimaryColumnWidth: 300];
     
     PrimaryViewController *primary = [[PrimaryViewController alloc] init];
     SecondaryViewController *secondary = [[SecondaryViewController alloc] init];
-    [mainSplitVC setDelegate:primary];
+    [splitVC setDelegate:primary];
     [primary setSecondary:secondary];
     
-    [mainSplitVC setViewController:primary forColumn:UISplitViewControllerColumnPrimary];
-    [mainSplitVC setViewController:secondary forColumn:UISplitViewControllerColumnSecondary];
+    [splitVC setViewController:primary forColumn:UISplitViewControllerColumnPrimary];
+    [splitVC setViewController:secondary forColumn:UISplitViewControllerColumnSecondary];
     
     // Activate windows
-    window.rootViewController = mainSplitVC;
+    window.rootViewController = splitVC;
     self.window = window;
     [self.window makeKeyAndVisible];
 }

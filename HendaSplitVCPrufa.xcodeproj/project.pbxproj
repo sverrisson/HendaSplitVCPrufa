@@ -15,7 +15,6 @@
 		2024DEAF271664D500D98909 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2024DEAE271664D500D98909 /* main.m */; };
 		2024DEB727166B3300D98909 /* PrimaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2024DEB627166B3300D98909 /* PrimaryViewController.m */; };
 		2024DEBA27166D6700D98909 /* SecondaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2024DEB927166D6700D98909 /* SecondaryViewController.m */; };
-		92AF4C35271753BB00172673 /* MainSplitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92AF4C34271753BB00172673 /* MainSplitViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,8 +33,6 @@
 		2024DEB627166B3300D98909 /* PrimaryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PrimaryViewController.m; sourceTree = "<group>"; };
 		2024DEB827166D6700D98909 /* SecondaryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondaryViewController.h; sourceTree = "<group>"; };
 		2024DEB927166D6700D98909 /* SecondaryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondaryViewController.m; sourceTree = "<group>"; };
-		92AF4C33271753BB00172673 /* MainSplitViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainSplitViewController.h; sourceTree = "<group>"; };
-		92AF4C34271753BB00172673 /* MainSplitViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainSplitViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,8 +69,6 @@
 				2024DE9D271664D400D98909 /* AppDelegate.m */,
 				2024DE9F271664D400D98909 /* SceneDelegate.h */,
 				2024DEA0271664D400D98909 /* SceneDelegate.m */,
-				92AF4C33271753BB00172673 /* MainSplitViewController.h */,
-				92AF4C34271753BB00172673 /* MainSplitViewController.m */,
 				2024DEB827166D6700D98909 /* SecondaryViewController.h */,
 				2024DEB927166D6700D98909 /* SecondaryViewController.m */,
 				2024DEB527166B3300D98909 /* PrimaryViewController.h */,
@@ -159,7 +154,6 @@
 			files = (
 				2024DEA4271664D400D98909 /* SupplementaryViewController.m in Sources */,
 				2024DE9E271664D400D98909 /* AppDelegate.m in Sources */,
-				92AF4C35271753BB00172673 /* MainSplitViewController.m in Sources */,
 				2024DEAF271664D500D98909 /* main.m in Sources */,
 				2024DEBA27166D6700D98909 /* SecondaryViewController.m in Sources */,
 				2024DEA1271664D400D98909 /* SceneDelegate.m in Sources */,
