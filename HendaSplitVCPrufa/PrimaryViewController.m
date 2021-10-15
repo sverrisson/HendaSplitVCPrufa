@@ -22,6 +22,11 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showHideSecondaryMenuButton:) name:kNotificationHideShowButton object:nil];
 }
 
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    
+}
+
 - (void)showSecondaryViewController {
     NSLog(@"showSecondaryViewController");
     if (self.secondary) {

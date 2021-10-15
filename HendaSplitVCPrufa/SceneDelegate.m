@@ -34,6 +34,7 @@
     SecondaryViewController *secondary = [[SecondaryViewController alloc] init];
     [splitVC setDelegate:primary];
     [primary setSecondary:secondary];
+    [secondary setSession:session];
     
     [splitVC setViewController:primary forColumn:UISplitViewControllerColumnPrimary];
     [splitVC setViewController:secondary forColumn:UISplitViewControllerColumnSecondary];

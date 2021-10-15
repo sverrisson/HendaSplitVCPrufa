@@ -19,6 +19,18 @@
     // Do any additional setup after loading the view.
     [self.view setBackgroundColor: [UIColor colorWithRed:0 green:0.3 blue:0.5 alpha:0.8]];
     self.title = @"SecondaryViewController";
+
+    // SceneStorage
+    NSDictionary<NSString *,id> *userInfo = self.session.userInfo;
+    NSDate *userInfoTime = userInfo[@"time"];
+    if (userInfoTime != nil) {
+        self.title = [NSString stringWithFormat:@"%@", userInfoTime.description];
+    } else {
+        NSDate *time = [[NSDate alloc] initWithTimeIntervalSinceNow:0];
+        self.title = [NSString stringWithFormat:@"%@", time.description];
+        NSDictionary<NSString *,id> *storeTime = [NSDictionary dictionaryWithObject:time forKey:@"time"];
+        [self.session setUserInfo:storeTime];
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated {
