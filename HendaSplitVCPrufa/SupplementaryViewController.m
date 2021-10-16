@@ -6,8 +6,6 @@
 //
 
 #import "SupplementaryViewController.h"
-#import "PrimaryViewController.h"
-#import "SecondaryViewController.h"
 
 @interface SupplementaryViewController ()
 

@@ -6,7 +6,6 @@
 //
 
 #import "SceneDelegate.h"
-#import "MainSplitViewController.h"
 #import "SecondaryViewController.h"
 #import "PrimaryViewController.h"
 #import "SupplementaryViewController.h"
