@@ -22,6 +22,36 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showHideSecondaryMenuButton:) name:kNotificationHideShowButton object:nil];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    dispatch_after(6 * NSEC_PER_SEC, dispatch_get_main_queue(), ^{
+        [self readFile];
+    });
+}
+
+- (void)readFile {
+    // StorageTest
+    NSError *error = nil;
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSURL *tempURL = [fileManager URLForDirectory:NSApplicationSupportDirectory inDomain:NSUserDomainMask appropriateForURL:nil create:YES error:&error];
+    if (error) {
+        NSLog(@"Villa: %@", error.localizedDescription);
+        error = nil;
+    }
+    if (tempURL) {
+        NSString *string = @"";
+        NSURL *fileURL = [[tempURL URLByAppendingPathComponent:@"skrá"] URLByAppendingPathExtension:@"txt"];
+        string = [NSString stringWithContentsOfURL:fileURL encoding:NSUTF8StringEncoding error:&error];
+        if (error) {
+            NSLog(@"Villa lesa: %@", error.localizedDescription);
+            error = nil;
+        }
+        if (string) [self setTitle:string];
+    } else {
+        NSAssert(NO, @"No tempURL");
+    }
+}
+
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     

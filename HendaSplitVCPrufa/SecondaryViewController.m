@@ -31,6 +31,27 @@
         NSDictionary<NSString *,id> *storeTime = [NSDictionary dictionaryWithObject:time forKey:@"time"];
         [self.session setUserInfo:storeTime];
     }
+    
+    // StorageTest
+    NSError *error = nil;
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSURL *tempURL = [fileManager URLForDirectory:NSApplicationSupportDirectory inDomain:NSUserDomainMask appropriateForURL:nil create:YES error:&error];
+    if (error) {
+        NSLog(@"Villa: %@", error.localizedDescription);
+        error = nil;
+    }
+    if (tempURL) {
+        NSString *string = @"Test";
+        NSURL *fileURL = [[tempURL URLByAppendingPathComponent:@"skrá"] URLByAppendingPathExtension:@"txt"];
+        [string writeToURL:fileURL atomically:YES encoding:NSUTF8StringEncoding error:&error];
+        if (error) {
+            NSLog(@"Villa skrá: %@", error.localizedDescription);
+            error = nil;
+        }
+        NSLog(@"Written to: %@", tempURL.path);
+    } else {
+        NSAssert(NO, @"No tempURL");
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated {
